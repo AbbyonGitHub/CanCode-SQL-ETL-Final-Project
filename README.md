@@ -1,1 +1,13 @@
 # CanCode-SQL-ETL-Final-Project
+
+Project Description
+
+For this project, I created a database for a simple sales order processing system utilized by a theoretical plant nursery located in the Capital District. There are seven linked tables which hold information related to addresses (of both vendor and customer), vendors, product departments, products, customers, and sales order info. The database is configured to avoid data redundancy and preserve data integrity. As database design was not a topic covered in this class, it is not comprehensive, and is for demonstration purposes only.
+
+To populate the database tables, I used two Microsoft Integration Services (SSIS) packages and employed several tasks within the platform. The first package ingested data from an Excel inventory worksheet I modified from an existing plant nursery. The second package ingested mock data via a looping container from six other .csv files I created using a website called Mockaroo, Excel, and SQL queries. Both packages contain data conversion tasks, and the latter package also includes both a task to separate concatenated Albany County cities and zip codes (which I had previously created to produce realistic regional mock data), and a task to look up the current unit price for each product ID.
+
+After the packages were run, I defined foreign key constraints to complete the linkage of the tables, as well as a "unique" constraint on the email column of the customer table to prevent duplicate values from being inserted. The unique constraint also adds a nonclustered index to that column by default to facilitate faster searching.
+
+For the remainder of my project, I practiced a number of SQL queries while performing data cleaning tasks, calculations/aggregations on multiple columns, insertions to tables, updates to data, and deletions. I also created temporary tables which one could use to query a specific portion of data for greater efficiency, a function to produce quick/basic sales data for a provided date range, a stored procedure which produced a temporary table based on user input, and a view (virtual table/stored query) which combined product and inventory information to be examined efficiently and safely by any party.
+
+Note on mock data: I set up my mock data to allow a customer to purchase up to twelve distinct items per order, at a quantity of up to twelve each. Unfortunately, the randomization used to produce mock customer orders did not discriminate between high- and low-priced items, causing large numbers of high-priced items to be purchased, and customer order totals to be inflated. As the database is for demonstration purposes only, please ignore this complication.
