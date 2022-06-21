@@ -197,7 +197,7 @@ CREATE TABLE #TempProduct(
 	CurrentUnitPrice DECIMAL(18,2),
 	StockQuantity INT,
 	VendorID INT,
-	IsActive BIT,
+	IsActive BIT
 );
 
 INSERT INTO #TempProduct
@@ -224,7 +224,7 @@ CREATE TABLE #TempProduct2(
 	CurrentUnitPrice DECIMAL(18,2),
 	StockQuantity INT,
 	VendorID INT,
-	IsActive BIT,
+	IsActive BIT
 );
 
 INSERT INTO #TempProduct2
