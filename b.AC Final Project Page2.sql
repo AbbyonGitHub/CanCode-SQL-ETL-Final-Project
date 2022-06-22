@@ -80,7 +80,7 @@ INNER JOIN Vendor
 WHERE (ProductDepartmentName = 'Shrub') AND (VendorName = 'Grady LLC');
 
 --See what happens to tables after running following statement (when FKs disabled...see below) and before committing.
-SELECT SalesOrderID, ProductID FROM SalesOrderProduct WHERE ProductID='1';
+SELECT SalesOrderID, ProductID FROM SalesOrderProduct WHERE ProductID = '1';
 SELECT * FROM Product WHERE ProductID = '1';
 
 --Delete records (will not work due to constraints...read on).
