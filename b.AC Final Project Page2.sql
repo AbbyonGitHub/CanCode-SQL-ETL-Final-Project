@@ -142,13 +142,15 @@ WHERE (ProductDepartmentID = 1) AND (VendorID = 19);
 
 --Determine which customers live in "Coeymans Hollow", and display their CustomerID, full name, address, and email (via subquery).
 SELECT CustomerID, CustomerFirstName AS FirstName, CustomerLastName AS LastName, CustomerEmail AS Email,
-	(SELECT CONCAT(StreetAddress, ', ', City, ', ', State, ' ', ZipCode)
-	FROM Address
-	WHERE Address.AddressID = Customer.AddressID)
-	AS HomeAddress
+	(	SELECT CONCAT(StreetAddress, ', ', City, ', ', State, ' ', ZipCode)
+		FROM Address
+		WHERE Address.AddressID = Customer.AddressID
+	) AS HomeAddress
 FROM Customer
-WHERE AddressID IN(SELECT AddressID FROM Address
-					WHERE City LIKE 'Coeymans Hollow');
+WHERE AddressID IN(	SELECT AddressID 
+		   	FROM Address
+		   	WHERE City LIKE 'Coeymans Hollow'
+		   );
 
 --Create a function that returns a table with sales summary information for a given range of dates. Remember that the
 --store is only open from May through September and started business in 2020.
