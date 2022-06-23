@@ -313,7 +313,8 @@ BEGIN TRAN;
 UPDATE Product
 SET ProductName = REPLACE(ProductName, 'Abellio', 'Abelia')
 FROM Product
-WHERE ProductName = 'Abellio grandiflora Abby Abelia_2022_05_26 03';
+--Not necessary to work in this instance, but to show the full syntax.
+--WHERE ProductName = 'Abellio grandiflora Abby Abelia_2022_05_26 03';
 COMMIT TRAN;
 --ROLLBACK TRAN;
 
@@ -325,6 +326,7 @@ BEGIN TRAN;
 UPDATE Product
 SET ProductName = REPLACE(ProductName, '_2022_05_26','')
 FROM Product
-WHERE ProductName = 'Abelia grandiflora Abby Abelia_2022_05_26 03';
+--Not necessary to work in this instance, but to show the full syntax.
+--WHERE ProductName = 'Abelia grandiflora Abby Abelia_2022_05_26 03';
 COMMIT TRAN;
 --ROLLBACK TRAN;
