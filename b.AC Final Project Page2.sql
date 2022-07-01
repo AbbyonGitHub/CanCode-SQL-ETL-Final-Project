@@ -290,7 +290,7 @@ SET CurrentUnitPrice = CurrentUnitPrice * 1.05
 SELECT ProductID, ProductName, CurrentUnitPrice, ProductDepartmentName, Vendor.VendorID
 FROM ProductDepartment
 INNER JOIN Product 
-	ON ProductDepartment.ProductDepartmentID=Product.ProductDepartmentID
+	ON ProductDepartment.ProductDepartmentID = Product.ProductDepartmentID
 INNER JOIN Vendor 
 	ON Product.VendorID = Vendor.VendorID
 WHERE (ProductDepartmentName = 'Tropical/Houseplant' AND CurrentUnitPrice < 40.00)
