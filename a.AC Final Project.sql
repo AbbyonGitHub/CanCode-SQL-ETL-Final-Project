@@ -72,14 +72,13 @@ CREATE TABLE SalesOrder(
 );
 
 --Create a new table with product specific sales order details (similar to lines on an invoice).
-CREATE TABLE SalesOrderProduct
-	(
-		SalesOrderID INT NOT NULL,
-		ProductID INT NOT NULL,
-		ProductQuantity INT NOT NULL,
-		ProductUnitPrice DECIMAL(18,2) NOT NULL,
-		PRIMARY KEY (SalesOrderID, ProductID)
-	);
+CREATE TABLE SalesOrderProduct(
+	SalesOrderID INT NOT NULL,
+	ProductID INT NOT NULL,
+	ProductQuantity INT NOT NULL,
+	ProductUnitPrice DECIMAL(18,2) NOT NULL,
+	PRIMARY KEY (SalesOrderID, ProductID)
+);
 
 --Ingest mock data into tables using SSIS packages now. Change path in each file connection for both packages, 
 --change file path in Load Remainder Loop Editor (double click on container, go to Collection), and change the 
